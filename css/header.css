@@ -34,7 +34,10 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+.number option{
+    background-color: #E1BE34 !important;
+    color: #FFFFFF;
+}
 .number select {
     background: none;
     border: none;
