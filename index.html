@@ -14,6 +14,7 @@
     <link href="/css/media.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -25,10 +26,10 @@
                 </div>
                 <div class="navigation">
                     <div>
-                        <a href="#cost-section">Цены и сроки</a>
-                        <a href="#guarantees-section">Гарантии</a>
-                        <a href="#feedback-section">Отзывы</a>
-                        <a href="#call-back-section">Контакты</a>
+                        <a href="#cost-section" onclick="slowScroll('#cost-section')">Цены и сроки</a>
+                        <a href="#guarantees-section" onclick="slowScroll('#guarantees-section')">Гарантии</a>
+                        <a href="#feedback-section" onclick="slowScroll('#feedback-section')">Отзывы</a>
+                        <a href="#call-back-section" onclick="slowScroll('#call-back-section')">Контакты</a>
                     </div>
                 </div>
                 <div class="contacts">
@@ -41,7 +42,7 @@
                         </select>
                     </div>
                     <div class="btn-transparent">
-                        <a class="button" href="#call-back-section">ОБРАТНЫЙ ЗВОНОК</a>
+                        <a class="button" href="#call-back-section" onclick="slowScroll('#call-back-section')">ОБРАТНЫЙ ЗВОНОК</a>
                     </div>
                 </div>
             </div>
@@ -60,8 +61,8 @@
                         <span class="label-checkmark"></span>Запишем на подачу в консульство
                     </p>
                     <div class="buttons-container">
-                        <div class="btn-blue"><a class="button" href="#call-back-section">ОСТАВИТЬ ЗАЯВКУ</a></div>
-                        <div class="btn-transparent"><a class="button" href="#how-it-works-section">ПОДРОБНЕЕ</a></div>
+                        <div class="btn-blue"><a class="button" href="#call-back-section" onclick="slowScroll('#call-back-section')">ОСТАВИТЬ ЗАЯВКУ</a></div>
+                        <div class="btn-transparent"><a class="button" href="#how-it-works-section"  onclick="slowScroll('#how-it-works-section')">ПОДРОБНЕЕ</a></div>
                     </div>
                 </div>
                 <div></div>
@@ -121,7 +122,7 @@
                                     <textarea name="subject" id="subject" placeholder="Ваше сообщение"
                                         class="form-control" rows="4"></textarea>
                                 </span>
-                                <div class="btn-blue"><a class="button" href="#call-back-section">ОСТАВИТЬ ЗАЯВКУ</a>
+                                <div class="btn-blue"><a class="button" href="#call-back-section" onclick="slowScroll('#call-back-section')">ОСТАВИТЬ ЗАЯВКУ</a>
                                 </div>
                             </form>
                         </div>
@@ -173,7 +174,7 @@
                                 <span>1 type of set</span>
                                 <span>All ingredients included</span>
                             </div>
-                            <div class="btn-transparent center"><a class="button" href="#call-back-section">ОФОРМИТЬ
+                            <div class="btn-transparent center"><a class="button" href="#call-back-section" onclick="slowScroll('#call-back-section')">ОФОРМИТЬ
                                     ЗАЯВКУ</a></div>
                         </div>
                         <div class="cost-card">
@@ -186,7 +187,7 @@
                                 <span>All ingredients included</span>
                                 <span>Recipe inside</span>
                             </div>
-                            <div class="btn-transparent center"><a class="button" href="#call-back-section">ОФОРМИТЬ
+                            <div class="btn-transparent center"><a class="button" href="#call-back-section" onclick="slowScroll('#call-back-section')">ОФОРМИТЬ
                                     ЗАЯВКУ</a></div>
                         </div>
                         <div class="cost-card">
@@ -198,7 +199,7 @@
                                 <span>Free delivery</span>
                                 <span>All ingredients included</span>
                             </div>
-                            <div class="btn-transparent center"><a class="button" href="#call-back-section">ОФОРМИТЬ
+                            <div class="btn-transparent center"><a class="button" href="#call-back-section" onclick="slowScroll('#call-back-section')">ОФОРМИТЬ
                                     ЗАЯВКУ</a></div>
                         </div>
                     </div>
@@ -406,9 +407,6 @@
                                 <option value="2">+38 (097) 530-56-37</option>
                             </select>
                         </div>
-                        <div class="btn-transparent">
-                            <a class="button" href="#call-back-section">ОБРАТНЫЙ ЗВОНОК</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -453,9 +451,16 @@
                 behavior: "smooth"
             })
         }
+
+        function slowScroll(id) {
+            var offset = 0;
+            $('html, body').animate({
+                scrollTop: $(id).offset().top - offset
+            }, 1000);
+            return false;
+        }
         scrollToTopBtn.addEventListener("click", scrollToTop);
         document.addEventListener("scroll", handleScroll);
-        console.log(scrollToTopBtn);
     </script>
 </body>
 
